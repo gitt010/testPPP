@@ -1,11 +1,9 @@
 name: Matrix Aut44
 
 on:
-  workflow_dispatch:
   repository_dispatch:
-    types: [run-cluster]
-  schedule:
-    - cron: '0 * * * *'
+    types: [run-task]
+  workflow_dispatch:
 
 concurrency:
   group: matrix-pool-${{ github.workflow }}-${{ github.ref }}
